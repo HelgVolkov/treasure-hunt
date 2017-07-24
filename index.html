@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<style>
+		body,html {
+			margin: 0;
+			padding: 0;
+			height: 100%;
+		}
+		body {
+			background: url(./map.jpg) no-repeat center / cover;
+			box-sizing: border-box;
+			overflow: hidden;
+		}
+		.marker {
+			display: block;
+			position: absolute;
+			width: 50px;
+			height: 57px;
+			background: url(./marker.png) no-repeat center / cover;
+			transform: translate3d(-50%, -50%, 0) rotate(10deg);
+			margin: -8px -2px 0 0;
+			opacity: .5;
+		}
+		.treasure {
+			position: absolute;
+			visibility: hidden;
+			opacity: 0;
+			background: url(./treasure.png) no-repeat center / cover;
+			transition: all .3s;
+			box-sizing: border-box;
+		}
+		.treasure.found {
+			visibility: visible;
+			opacity: 1;
+		}
+
+		.status {
+			width: 300px;
+			text-align: center;
+			font-family: sans-serif;
+			background: rgba(255,255,255,.5);
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			font-size: 2rem;
+			padding: 1rem;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="treasure"></div>
+
+	<div class="status">Найди клад</div>
+
+	<script src="app.js"></script>
+</body>
+</html>
